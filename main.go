@@ -1,8 +1,7 @@
 package main
 
-import "fmt"
+import "github.com/getmmr/golang-learning/file"
 
 func main() {
-	a := "Hello Tom"
-	fmt.Printf("%v", a)
+	file.F1()
 }
