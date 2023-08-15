@@ -1,10 +1,18 @@
 package main
 
-import "github.com/getmmr/golang-learning/file"
+import (
+	"fmt"
+	"net/http"
+	"os"
+
+	"github.com/getmmr/golang-learning/httpserver"
+)
 
 func main() {
-	// file.F1()
-	// file.F2()
-	// file.F22()
-	file.F41()
+	handle := httpserver.HttpHandle{}
+	err := http.ListenAndServe(":8000", &handle)
+	if err != nil {
+		_, _ = fmt.Fprintf(os.Stderr, "error: %v\n", err)
+	}
+
 }
